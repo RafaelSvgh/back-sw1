@@ -35,6 +35,9 @@ async function bootstrap() {
   SwaggerModule.setup('docs', app, document);
 
   // Iniciar la aplicación en el puerto 3000
-  await app.listen(parseInt(process.env.PORT) || 3000);
+  // await app.listen(parseInt(process.env.PORT) || 3000);
+  const port = process.env.PORT || 3000;
+  console.log(`La aplicación está escuchando en el puerto: ${port}`);
+  await app.listen(port);
 }
 bootstrap();
